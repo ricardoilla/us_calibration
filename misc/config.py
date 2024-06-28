@@ -21,7 +21,17 @@ extract_pts_idx_1 = {'stylus_marker_0': 2,
 ##############################################################################
 cal2_data_path = 'data/output_cal2.json'
 c3d2_data_path = 'data/calibracion2.c3d'
-extract_pts_idx_2 = {'stylus_marker_0': 2,
+extract_pts_idx_2_3markers = {'stylus_marker_0': 0,
+                   'stylus_marker_1': 1,
+                   'stylus_marker_2': 2,
+                   'stylus_marker_3': 3,
+                   'probe_0': 7,
+                   'probe_1': 8,
+                   'probe_2': 9,
+                   'probe_3': 10,
+                   'sync': 11,
+                   }
+extract_pts_idx_2_4markers = {'stylus_marker_0': 2,
                    'stylus_marker_1': 0,
                    'stylus_marker_2': 3,
                    'stylus_marker_3': 1,

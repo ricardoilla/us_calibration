@@ -147,6 +147,10 @@ class Trial:
             for i in range(self.qty):
                 E_cluster = [self.e0.get_point(i), self.e1.get_point(i), self.e2.get_point(i), self.e3.get_point(i)]
                 S_cluster = [self.s0.get_point(i), self.s1.get_point(i), self.s2.get_point(i), self.s3.get_point(i)]
+                # print('S0: ', self.s0.get_point(i))
+                # print('S1: ', self.s1.get_point(i))
+                # print('S2: ', self.s2.get_point(i))
+
                 if self.num_markers == 4:
                     E_system, E_center = get_system_from_4_clusters(E_cluster)
                     S_system, S_center = get_system_from_4_clusters(S_cluster)
@@ -155,6 +159,8 @@ class Trial:
                     S_system, S_center = get_system_from_3_clusters(S_cluster)
                 else:
                     print("Wrong number of markers")
+                # print('ECOGRAFO:', E_system, E_center)
+                # print('Stylus:', S_system, S_system)
                 # Calculate transformations
                 T_w_e = get_transformation(WORLD, np.array([0, 0, 0]), E_system, E_center)
                 T_s_w = get_transformation(S_system, S_center, WORLD, np.array([0, 0, 0]))
@@ -166,6 +172,7 @@ class Trial:
                 p_E = np.matmul(T_w_e, p_W)
                 self.pw.append_point(p_W)
                 self.pe.append_point(p_E)
+                # break
 
     def fit_data(self):
         A_matrix = []

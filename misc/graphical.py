@@ -1,4 +1,5 @@
 from matplotlib import pyplot as plt
+import numpy as np
 
 
 def plot_probe_markers(trial):
@@ -102,6 +103,16 @@ def plot_p(trial):
     # Muestra las gráficas
     plt.show()
 
+def plot_q(trial):
+    plt.plot(trial.frames, trial.q.x, '.', label="q x")
+    plt.plot(trial.frames, trial.q.y, '.', label="q y")
+    plt.plot(trial.frames, trial.q.z, '.', label="q z")
+    plt.legend()
+    # Ajusta el layout para evitar solapamientos
+    plt.tight_layout()
+    # Muestra las gráficas
+    plt.show()
+
 def plot_results_in_e(trial):
     fig, axs = plt.subplots(3, constrained_layout=True)
     fig.suptitle('System Solution')
@@ -159,3 +170,28 @@ def plot_error(trial):
         axs[1].title.set_text('y')
         axs[2].title.set_text('z')
         plt.show()
+
+
+def print_errors(trial):
+    print('------------------------------')
+    print('Errores Maximos: ')
+    print('------------------------------')
+    print('System E:')
+    print('En x:', np.max(trial.error.x))
+    print('En y:', np.max(trial.error.y))
+    print('En z:', np.max(trial.error.z))
+    print('System W:')
+    print('En x:', np.max(trial.error_in_w.x))
+    print('En y:', np.max(trial.error_in_w.y))
+    print('En z:', np.max(trial.error_in_w.z))
+    print('------------------------------')
+    print('Errores Promedio: ')
+    print('------------------------------')
+    print('System E:')
+    print('En x:', np.mean(trial.error.x))
+    print('En y:', np.mean(trial.error.y))
+    print('En z:', np.mean(trial.error.z))
+    print('System W:')
+    print('En x:', np.mean(trial.error_in_w.x))
+    print('En y:', np.mean(trial.error_in_w.y))
+    print('En z:', np.mean(trial.error_in_w.z))
