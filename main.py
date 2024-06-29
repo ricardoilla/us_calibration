@@ -11,9 +11,9 @@ from matplotlib import pyplot as plt
 # plot_stylus_markers(trial1)
 
 
-c3d2 = C3D(config.c3d2_data_path, config.extract_pts_idx_2_4markers, 283)
+c3d2 = C3D(config.c3d2_data_path, config.extract_pts_idx_2_3markers, 283)
 avi_data2 = Avi(config.cal2_data_path, 28)
-trial2 = Trial("Trial2", c3d2, avi_data2, from_idx=25, num_markers=4)
+trial2 = Trial("Trial2", c3d2, avi_data2, from_idx=25, num_markers=3)
 trial2.calculate_pw_pe()
 plot_q(trial2)
 plot_probe_markers(trial2)
