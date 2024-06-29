@@ -33,7 +33,7 @@ def plot_probe_markers(trial):
     axs[1, 1].set_title('e3')
     axs[1, 1].legend()
 
-    fig.suptitle(trial.name, fontsize=16)
+    fig.suptitle('Probe Markers '+trial.name, fontsize=16)
 
     # Ajusta el layout para evitar solapamientos
     plt.tight_layout()
@@ -72,7 +72,7 @@ def plot_stylus_markers(trial):
     axs[1, 1].set_title('s3')
     axs[1, 1].legend()
 
-    fig.suptitle(trial.name, fontsize=16)
+    fig.suptitle('Stylus Markers '+trial.name, fontsize=16)
     # Ajusta el layout para evitar solapamientos
     plt.tight_layout()
 
@@ -96,7 +96,7 @@ def plot_p(trial):
     axs[1].set_title('pe')
     axs[1].legend()
 
-    fig.suptitle(trial.name, fontsize=16)
+    fig.suptitle('Pointer '+trial.name, fontsize=16)
     # Ajusta el layout para evitar solapamientos
     plt.tight_layout()
 
@@ -113,9 +113,11 @@ def plot_q(trial):
     # Muestra las gráficas
     plt.show()
 
+
+
 def plot_results_in_e(trial):
     fig, axs = plt.subplots(3, constrained_layout=True)
-    fig.suptitle('System Solution')
+    fig.suptitle('Results in E system')
     axs[0].plot(trial.frames, trial.pe.x, '.')
     axs[1].plot(trial.frames, trial.pe.y, '.')
     axs[2].plot(trial.frames, trial.pe.z, '.')
@@ -135,7 +137,7 @@ def plot_results_in_e(trial):
 
 def plot_results_in_w(trial):
     fig, axs = plt.subplots(3, constrained_layout=True)
-    fig.suptitle('System Solution')
+    fig.suptitle('Results in W system')
     axs[0].plot(trial.frames, trial.pw.x, '.')
     axs[1].plot(trial.frames, trial.pw.y, '.')
     axs[2].plot(trial.frames, trial.pw.z, '.')
@@ -156,7 +158,7 @@ def plot_results_in_w(trial):
 
 def plot_error(trial):
         fig, axs = plt.subplots(3, constrained_layout=True)
-        fig.suptitle('System Solution')
+        fig.suptitle('Error')
         axs[0].plot(trial.frames, trial.error.x, '.')
         axs[1].plot(trial.frames, trial.error.y, '.')
         axs[2].plot(trial.frames, trial.error.z, '.')

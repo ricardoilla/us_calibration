@@ -19,7 +19,7 @@ extract_pts_idx_1 = {'stylus_marker_0': 2,
                    'sync': 11,
                    }
 ##############################################################################
-cal2_data_path = 'data/output_cal2.json'
+cal2_data_path = 'data/output_cal2.json'  # 'data/output_cal2_29jun.json'
 c3d2_data_path = 'data/calibracion2.c3d'
 extract_pts_idx_2_3markers = {'stylus_marker_0': 0,
                    'stylus_marker_1': 1,
